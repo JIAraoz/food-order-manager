@@ -1,9 +1,7 @@
-
+import AppRouter from "./routes/AppRouter"
 function App() {
   return (
-    <>
-      <div className="tailwind-test text-3xl font-bold underline">Tailwind Test</div>
-    </>
+    <AppRouter/>
   )
 }
 
