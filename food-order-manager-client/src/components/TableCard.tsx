@@ -1,5 +1,4 @@
-import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
-
+import { Link } from "react-router-dom";
 
 const statusStyles = {
   free: "bg-emerald-500",
@@ -18,11 +17,12 @@ type TableCardProps = {
 export default function TableCard({ number, status, total }: TableCardProps){
 
     return(
-
-        <div className="tableCard bg-zinc-900 border-zinc-800 rounded-2xl p-4 flex flex-col gap-2 m-5">
-            <h3>Table {number}</h3>
-            <span className={`${statusStyles[status] || "bg-gray-500" } rounded-2xl `}>{status}</span>
-            <span>Total: {total}</span>
-        </div>
+        <Link to={`/tables/${number}`}>
+            <div className="tableCard bg-zinc-900 border-zinc-800 rounded-2xl p-4 flex flex-col gap-2 m-5">
+                <h3>Table {number}</h3>
+                <span className={`${statusStyles[status] || "bg-gray-500" } rounded-2xl `}>{status}</span>
+                <span>Total: {total}</span>
+            </div>
+        </Link>
     )
 }
